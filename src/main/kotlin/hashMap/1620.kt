@@ -1,8 +1,7 @@
 package hashMap
 
-import java.io.BufferedReader
-import java.io.InputStreamReader
-import java.util.StringTokenizer
+import FastScannerUtil
+
 
 /**
  * 첫째 줄에는 도감에 수록되어 있는 포켓몬의 개수 N이랑 내가 맞춰야 하는 문제의 개수 M이 주어져
@@ -16,20 +15,8 @@ import java.util.StringTokenizer
  * 입력으로 숫자가 들어왔다면 그 숫자에 해당하는 포켓몬의 이름을, 문자가 들어왔으면 그 포켓몬의 이름에 해당하는 번호를 출력하면 돼
 */
 
-private class FastScanner {
-    private val br = BufferedReader(InputStreamReader(System.`in`))
-    private var st: StringTokenizer? = null
-    fun next(): String {
-        while (st == null || !st!!.hasMoreElements()) {
-            st = StringTokenizer(br.readLine())
-        }
-        return st!!.nextToken()
-    }
-    fun nextInt(): Int = next().toInt()
-}
-
 fun main() {
-    val fs = FastScanner()
+    val fs = FastScannerUtil()
     // N(1 ≤ N ≤ 100,000)
     val n = fs.nextInt()
     require(n in 1..100000) { "1 ≤ N ≤ 100,000" }
